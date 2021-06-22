@@ -1,0 +1,30 @@
+# basic training options
+batch_size: 16
+# 총 epoch
+iter: 401
+# 10 epoch마다 검증
+val_iter: 10
+# 50 epoch마다 weigth 저장
+save_iter: 40
+
+# main fixed options
+dataset_name: q3
+model_name: simple_net
+device: cuda
+
+# dataset options
+# 1 input_length : 32ms
+# 1200 input_length : 32.4초
+input_length: 1200
+
+# optimizer args
+optimizer:
+  name: SGD
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.000001
+  nesterov: True
+schedule:
+  name: ReduceLROnPlateau
+  factor: 0.2
+  patience: 5
